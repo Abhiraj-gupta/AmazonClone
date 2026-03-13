@@ -50,7 +50,7 @@ exports.login = async (req, res) => {
     }
 
     const result = await pool.query(
-      "SELECT id, name, email, password FROM users WHERE email = $1",
+      "SELECT id, name, email, password_hash FROM users WHERE email = $1",
       [email]
     );
 
@@ -59,7 +59,7 @@ exports.login = async (req, res) => {
     }
 
     const user = result.rows[0];
-    const valid = await bcrypt.compare(password, user.password);
+    const valid = await bcrypt.compare(password, user.password_hash);
 
     if (!valid) {
       return res.status(401).json({ message: "Invalid email or password" });
