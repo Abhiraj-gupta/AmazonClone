@@ -8,12 +8,18 @@ exports.getWishlist = async (req, res) => {
     const result = await pool.query(
       `SELECT w.id, w.product_id, w.created_at,
               p.name, p.price, p.rating, p.review_count,
-              (SELECT pi.image_url FROM product_images pi
-               WHERE pi.product_id = p.id AND pi.is_primary = true LIMIT 1) AS image_url
-       FROM wishlist_items w
-       JOIN products p ON p.id = w.product_id
-       WHERE w.user_id = $1
-       ORDER BY w.created_at DESC`,
+              (SELECT
+                 CASE
+                   WHEN pi.image_url LIKE 'http%' THEN pi.image_url
+                   ELSE 'https://' || pi.image_url
+                END
+              FROM product_images pi
+              WHERE pi.product_id = p.id AND pi.is_primary = true
+              LIMIT 1) AS image_url
+      FROM wishlist_items w
+      JOIN products p ON p.id = w.product_id
+      WHERE w.user_id = $1
+      ORDER BY w.created_at DESC`,
       [userId]
     );
 
