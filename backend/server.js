@@ -17,6 +17,10 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
+app.get("/", (req, res) => {
+  res.send("Amazon Clone Backend API Running 🚀");
+});
+
 app.get("/health", (req, res) => {
   res.json({ ok: true });
 });
