@@ -20,7 +20,11 @@ function HeroMovingProducts({ products }) {
   const stream = [...featured, ...featured];
 
   return (
-    <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[380px] overflow-hidden sm:h-[440px]">
+    <div
+      aria-hidden="true"
+      role="presentation"
+      className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[380px] overflow-hidden sm:h-[440px]"
+    >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),transparent_65%)]" />
       <div className="hero-shine" />
 
@@ -110,6 +114,8 @@ function DealCarousel({ title, products }) {
                   onError={(e) => handleImageFallback(e, productFallbackImage(product, 176))}
                   alt={product.name}
                   className="mx-auto h-44 w-44 object-contain transition-transform duration-500 ease-out group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="mt-2 px-1">
@@ -299,6 +305,8 @@ export default function Home() {
                       onError={(e) => handleImageFallback(e, "/product-images/category-car-accessories.svg")}
                       alt={cat.name}
                       className="mx-auto mb-3 h-24 w-full rounded-md object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <h3 className="text-sm font-bold text-[#0F1111]">{cat.name}</h3>
                     <p className="mt-0.5 text-xs text-[#007185]">Shop now</p>

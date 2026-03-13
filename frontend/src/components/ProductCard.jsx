@@ -121,6 +121,7 @@ export default function ProductCard({
           alt={product?.alt_text ?? name}
           className="mx-auto aspect-square w-full object-contain transition-transform duration-500 ease-out group-hover:scale-110"
           loading="lazy"
+          decoding="async"
         />
       </Link>
 
