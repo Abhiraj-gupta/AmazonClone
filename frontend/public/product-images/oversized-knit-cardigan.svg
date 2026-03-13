@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Oversized Knit Cardigan">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f0ed"/>
+      <stop offset="1" stop-color="#f0e5e0"/>
+    </linearGradient>
+    <pattern id="knit" width="14" height="14" patternUnits="userSpaceOnUse">
+      <path d="M2 7h10" stroke="#c8b4aa" stroke-width="1.5"/>
+      <path d="M7 2v10" stroke="#cfbeb4" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g transform="translate(300,310)">
+    <path d="M-185 -55 l65 -85 h70 l50 70 h0 l50 -70 h70 l65 85 v220 h-90 v-130 h-50 v130 h-120 v-130 h-50 v130 h-90z" fill="#d7b8aa"/>
+    <path d="M-160 -30 l50 -65 h40 l35 52 h0 l35 -52 h40 l50 65 v195 h-55 v-120 h-40 v120 h-90 v-120 h-40 v120 h-55z" fill="url(#knit)" opacity="0.9"/>
+    <rect x="-32" y="-95" width="64" height="72" rx="18" fill="#ead9d1"/>
+  </g>
+  <text x="300" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#5c473d">Oversized Knit Cardigan</text>
+</svg>

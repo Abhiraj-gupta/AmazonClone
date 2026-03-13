@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Smart LED Desk Lamp">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2effb"/>
+      <stop offset="1" stop-color="#e6e0f8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="25%" r="35%">
+      <stop offset="0" stop-color="#fff6bf" stop-opacity="1"/>
+      <stop offset="1" stop-color="#fff6bf" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <ellipse cx="300" cy="220" rx="210" ry="130" fill="url(#glow)"/>
+  <g transform="translate(300,335)">
+    <rect x="-120" y="165" width="240" height="28" rx="14" fill="#5d4f8d"/>
+    <rect x="-40" y="50" width="80" height="120" rx="20" fill="#7465a7"/>
+    <path d="M-10 48 l90 -140 h58 l-98 160 z" fill="#8a7fc0"/>
+    <rect x="65" y="-100" width="135" height="35" rx="14" fill="#9a90ce"/>
+    <rect x="75" y="-95" width="115" height="10" rx="5" fill="#fff7cb"/>
+  </g>
+  <text x="300" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#4f467a">Smart LED Desk Lamp</text>
+</svg>

@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* Hide scrollbar in carousels */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(100%); }
+}
+
+@keyframes heroMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes heroChipFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes heroShineSweep {
+  from { transform: translateX(-120%) skewX(-22deg); }
+  to { transform: translateX(220%) skewX(-22deg); }
+}
+
+.hero-product-track {
+  position: absolute;
+  left: -8%;
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  padding: 0 16px;
+  transform: translateZ(0);
+}
+
+.hero-product-track--forward {
+  top: 44px;
+  animation: heroMarquee 34s linear infinite;
+}
+
+.hero-product-chip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 440px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.34), rgba(17, 24, 39, 0.2));
+  backdrop-filter: blur(4px);
+  box-shadow: 0 10px 28px rgba(4, 9, 16, 0.2);
+  padding: 16px;
+  animation: heroChipFloat 5.2s ease-in-out infinite;
+}
+
+.hero-product-chip:nth-child(3n) {
+  animation-delay: 0.6s;
+}
+
+.hero-product-chip:nth-child(4n) {
+  animation-delay: 1.2s;
+}
+
+.hero-shine {
+  position: absolute;
+  top: 34px;
+  left: -20%;
+  width: 36%;
+  height: 188px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  filter: blur(8px);
+  animation: heroShineSweep 5.8s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .hero-product-track--forward {
+    top: 52px;
+    animation-duration: 28s;
+  }
+
+  .hero-product-chip {
+    min-width: 320px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .hero-shine {
+    top: 42px;
+    height: 130px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-product-track--forward,
+  .hero-product-chip,
+  .hero-shine {
+    animation: none;
+  }
+}
