@@ -1,7 +1,10 @@
 import axios from "axios";
 
+const API_URL =
+  import.meta.env.VITE_API_URL || "https://amazonclone-htnz.onrender.com/api";
+
 export const api = axios.create({
-  baseURL: "/api",
+  baseURL: API_URL
 });
 
 api.interceptors.request.use((config) => {
@@ -11,4 +14,3 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
-
